@@ -13,7 +13,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchEmbarcaciones = async () => {
       try {
-        const response = await axios.get('http://localhost:8019/api/embarcaciones');
+        const response = await axios.get<Embarcacion[]>('http://localhost:8019/api/embarcaciones');
         setEmbarcaciones(response.data);
       } catch (error) {
         console.error('Error:', error);
